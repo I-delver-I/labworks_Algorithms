@@ -1,33 +1,27 @@
 ﻿#include <iostream>
 #include <cmath>
 
-void input(int &n);
-void pythagorean_trio(int &n, int& a, int& b, int& c, int& count);
-void output(int& a, int& b, int& c, int& count);
+void pythagorean_trio(int n, int a, int b, int c, int& count);
+void output(int a, int b, int c, int count);
 
 // TASK 25
 
 int main()
 {
     int n, a = 1, b = 1, c = 1, count = 0;
-    
-    input(n); // Input of the numbers
-    pythagorean_trio(n, a, b, c, count);    // Calculation of pythagorean trios
-    std::cout << "The quantity of pythagorean trios is: " << count / 2 << std::endl;    // Output of the count of trios
-}
-
-void input(int& n)
-{
-    std::cout << "Please, enter the natural n: ";   // Initialization of n
+    // Input of the numbers
+    std::cout << "Please, enter the natural n: ";
     std::cin >> n;
-    while(n <= 0)   // The codition of a natural number
+    while (n <= 0)   // The codition of a natural number
     {
         std::cout << "n is less or equal to 0. Please, enter a natural one: ";
         std::cin >> n;
     }
+    pythagorean_trio(n, a, b, c, count);    // Calculation of pythagorean trios
+    std::cout << "The quantity of pythagorean trios is: " << count / 2 << std::endl;    // Output of the count of trios
 }
 
-void pythagorean_trio(int& n, int& a, int& b, int& c, int& count)
+void pythagorean_trio(int n, int a, int b, int c, int& count)
 {
     if (a <= n && b <= n && c <= n)
     {
@@ -55,7 +49,7 @@ void pythagorean_trio(int& n, int& a, int& b, int& c, int& count)
     }
 }
 
-void output(int& a, int& b, int& c, int& count) // Output of a, b and c
+void output(int a, int b, int c, int count) // Output of a, b and c
 {
     std::cout << "There is the " << count << " pythagorean trio! It's consisted of: " << std::endl;
     std::cout << "a, which equals to: " << a << std::endl;
